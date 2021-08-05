@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import List from './components/PartyApp/List';
 import AddToList from './components/PartyApp/AddToList';
+import Main from './components/BankApp/Main';
 
 
 
@@ -47,7 +48,7 @@ function App() {
         People Invited to party.
       </h1>
         <List people={people} />
-        <AddToList people={people} setPeople={setPeople} /> </>: ""} 
+        <AddToList people={people} setPeople={setPeople} /> </>: <Main />} 
     </div>
   );
 }
