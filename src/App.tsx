@@ -21,7 +21,7 @@ function App() {
 
   const [view, setView] = useState("Party List")
   const changeViews = () => {
-    
+    view === "Party List" ? setView("Bank") : setView("Party List")
   }
 
 
@@ -42,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <button onClick={changeViews} className="btn-change">Change App</button>
      {view === "Party List" ?  <><h1>
         People Invited to party.
       </h1>

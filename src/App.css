@@ -90,3 +90,16 @@
   color: white;
   border: none;
 }
+.btn-change {
+  margin-top: 2rem;
+  background-color: #0b5468;
+  color: #fff;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.btn-change:hover {
+  background-color: #0b7494;
+  box-shadow: 0 1rem 2rem rgba(#000, 0.15);
+}
