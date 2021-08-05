@@ -1,32 +1,40 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import List from './components/List';
+import List from './components/PartyApp/List';
+import AddToList from './components/PartyApp/AddToList';
 
 
 
-interface IState{
+export interface IState{
   people: {
     name: string
     age: number
-    url: string
+    img: string
     note?: string
   }[]
 }
 
 
+
 function App() {
+
+  const [view, setView] = useState("Party List")
+  const changeViews = () => {
+    
+  }
+
 
   const [people, setPeople] = useState<IState["people"]>([
     {
       name: "Lebron James",
-      url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.zKnLzGwKp4DXzlvrKyP8lQHaD4%26pid%3DApi&f=1",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.zKnLzGwKp4DXzlvrKyP8lQHaD4%26pid%3DApi&f=1",
       age: 36,
       note: "Like to eat tacos"
     },
     {
       name: "Jame Harden",
-      url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vY9cfbuC53VHqKFbl2cQhgHaEy%26pid%3DApi&f=1",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vY9cfbuC53VHqKFbl2cQhgHaEy%26pid%3DApi&f=1",
       age: 33,
       note: "Like to eat go to stay in shape"
     }])
@@ -34,10 +42,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
+     {view === "Party List" ?  <><h1>
         People Invited to party.
-        <List people={people} />
       </h1>
+        <List people={people} />
+        <AddToList people={people} setPeople={setPeople} /> </>: ""} 
     </div>
   );
 }

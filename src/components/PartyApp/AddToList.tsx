@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import { IState as Props } from "../App"
+import { IState as Props } from "../../App"
 
 
 interface IProps {
